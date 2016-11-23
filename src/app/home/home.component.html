@@ -1,0 +1,27 @@
+<div class="heading">
+    <div class="wrap clearfix">
+        <div class="content">
+            <h1>Các <b>Paste</b> mới nhất</h1>
+            <p>Write <span class="text-highlight">something</span> awesome here!</p>
+        </div>
+        <div class="actions">
+            <a class="button add" routerLink="/create">Tạo mới</a>
+        </div>
+    </div>
+</div>
+<div class="manage-servers">
+    <div class="wrap clearfix">
+        <div id="servers" class="list clearfix" *ngIf="loaded">
+            <app-list-item [items]="items | async"></app-list-item>
+        </div>
+        <app-loader *ngIf="!loaded"></app-loader>
+        <div class="no-items filter">Your filter did not return any results</div>
+    </div>
+</div>
+
+<div class="wrap clearfix" *ngIf="blank">
+    <div class="boss">
+        <h1>Holysh*t. Nó vẫn chưa có gì cả!</h1>
+        <h3>Thử viết gì đó đi</h3>
+    </div>
+</div>

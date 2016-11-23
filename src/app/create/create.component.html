@@ -1,0 +1,23 @@
+<div class="wrap">
+  <div class="box form clearfix">
+    <h1>Tạo mới</h1>
+    <form autocomplete="off">
+      <div class="row">
+        <label for="name">Tiêu đề</label><span class="help">Hãy cho mọi người biết đây là gì</span>
+        <input class="focus" type="text" name="name" [(ngModel)]="name">
+      </div>
+      <div class="row">
+        <label for="content">Nội dung</label><span class="help">Nội dung của paste</span>
+        <textarea rows="15" name="content" [(ngModel)]="content"></textarea>
+      </div>
+      <div class="row">
+        <label for="content">Ngôn ngữ</label><span class="help">Ngôn ngữ của paste này</span>
+        <select [(ngModel)]="lang" name="lang">
+          <option *ngFor="let l of langs" [value]="l.short">{{l.title}}</option>
+        </select>
+      </div>
+      <div class="row"><button (click)="create()" [disabled]="busy || !isValid()">Tạo</button></div>
+    </form>
+  </div>
+  
+  <a class="form-button center" routerLink="/home"><span class="inline-icon back"></span>Không muốn tạo nữa?</a></div>

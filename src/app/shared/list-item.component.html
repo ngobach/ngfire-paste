@@ -1,0 +1,11 @@
+<div class="item one-third" *ngFor="let paste of items">
+    <a class="box clearfix" [routerLink]="['/view', paste.$key]">
+        <div class="lang-icon" [ngClass]="classForLang(paste.lang)"></div>
+        <div class="name" style="flex: 1">
+            {{paste.title}}
+        </div>
+        <div class="time">
+            {{paste.createdAt | date:"dd/MM/yy HH:mm:ss"}}
+        </div>
+    </a>
+</div>

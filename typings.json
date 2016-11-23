@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "debug": "registry:npm/debug#2.0.0+20160723033700"
+  },
+  "globalDependencies": {
+    "highlightjs": "registry:dt/highlightjs#9.1.0+20160317120654"
+  }
+}

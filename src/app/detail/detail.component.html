@@ -1,0 +1,27 @@
+<div class="heading">
+  <div class="wrap clearfix">
+    <div class="content" *ngIf="paste === undefined">
+      <h1>Đang tải ...</h1>
+    </div>
+    <div class="content" *ngIf="paste">
+      <h1>{{paste.title}}</h1>
+      <p>Ngôn ngữ <span class="text-highlight">{{langName()}}</span>. Tạo lúc: <span class="text-highlight">{{paste.createdAt | date:"dd/MM/yy HH:mm:ss"}}</span></p>
+    </div>
+    <div class="actions">
+        <a class="button back" href="javascript:0" routerLink="/home">Trở lại</a>
+        <a class="button button-copy" href="javascript:0" *ngIf="!copied" (click)="onCopy()">Copy</a>
+        <a class="button button-copy disabled" *ngIf="copied">Copied</a>
+    </div>
+  </div>
+</div>
+
+<div class="code-block" *ngIf="paste">
+  <div class="wrap clearfix">
+    <div class="nano">
+      <pre class="nano-content"><code [innerHtml]="content()"></code></pre>
+    </div>
+
+    <button class="form-button center" *ngIf="isOwner" (click)="delete()"><span class="inline-icon back"></span>Xóa Paste này??</button>
+  </div>
+</div>
+<app-loader *ngIf="!paste"></app-loader>

@@ -1,0 +1,11 @@
+<div id="header">
+  <div class="wrap">
+    <a id="logo" href="javascript:0" routerLink="/"></a>
+    <ul id="navigation">
+      <li *ngIf="user"><span>Logged in as</span> {{user.displayName}}</li>
+      <li *ngFor="let link of links"><a routerLinkActive="active" [routerLink]="link.target">{{link.title}}</a></li>
+      <li *ngIf="!user"><a (click)="login()" href="javascript:0">Login</a></li>
+      <li *ngIf="user"><a (click)="logout()" href="javascript:0">Logout</a></li>
+    </ul>
+  </div>
+</div>

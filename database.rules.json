@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "pastes": {
+      ".read": true,
+      ".write": false,
+      "$pasteId": {
+        ".read": true,
+        ".write": "auth != null && (newData.child('owner').val() === auth.uid || data.child('owner').val() === auth.uid)"
+      }
+    }
+  }
+}
