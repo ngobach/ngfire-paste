@@ -1,7 +1,13 @@
 # Paste
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.20-4.
+Angular 2 Project with Firebase backend powered by *AngularFire2*.
 
-#Live demo
+## Live demo
 
-Live demo at: [Firebase hosting](https://paste.ngobach,com/)
+Live demo can be found here:  
+:heart: [Firebase hosting](https://paste.ngobach,com/)
+
+## Fix
+
+There're some bugs with **awesome-typescript-loader** that can't load *hightlight.js* and any library with **.js** suffix.   
+After run `npm install` you must rename **@types/hightlight.js** to  **@types/hightlightjs** and **hightlight.js** to **hightlightjs** in *node_modules*.   
