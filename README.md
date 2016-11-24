@@ -5,7 +5,7 @@ Angular 2 Project with Firebase backend powered by *AngularFire2*.
 ## Live demo
 
 Live demo can be found here:  
-:heart: [Firebase hosting](https://paste.ngobach,com/)
+:heart: [Firebase hosting](https://paste.ngobach.com/)
 
 ## Fix
 
