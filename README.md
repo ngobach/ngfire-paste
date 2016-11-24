@@ -4,4 +4,4 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 #Live demo
 
-Live demo at: [Firebase hosting](https://happy-pasting.firebaseapp.com/home)
+Live demo at: [Firebase hosting](https://paste.ngobach,com/)
