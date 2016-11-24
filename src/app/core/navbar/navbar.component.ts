@@ -27,12 +27,13 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.subscribe((state) => this.user = state ? state.facebook : null);
+    this.auth.subscribe(state => this.user = state ? state.facebook : null);
   }
 
   login() {
     this.auth.login();
   }
+
   logout() {
     this.auth.logout();
     this.router.navigate(['/home']);

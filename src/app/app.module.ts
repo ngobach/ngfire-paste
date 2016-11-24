@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 
-import { CoreModule } from './core/core.module';
+import { CoreModule, NotFoundComponent } from './core';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
@@ -25,6 +25,7 @@ const ROUTES: Routes = [
   {path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
   {path: 'list', component: ListComponent },
   {path: 'view/:id', component: DetailComponent },
+  {path: '**', component: NotFoundComponent}
 ];
 
 
