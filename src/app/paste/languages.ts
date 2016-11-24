@@ -3,6 +3,7 @@ export interface Language {
     title: string;
     default?: boolean;
 }
+
 export const LANGS: Language[] = [
     { title: 'C++', short: 'cpp' },
     { title: 'C Sharp', short: 'cs' },
@@ -22,4 +23,15 @@ export const LANGS: Language[] = [
 
 export function getLang(short: string): Language {
     return LANGS.find(lang => lang.short === short);
+}
+
+export function setDefault(lang: string) {
+    localStorage.setItem('lang', lang);
+}
+
+export function getDefault(): string {
+    if (localStorage.getItem('lang') && LANGS.some(x => x.short === localStorage.getItem('lang'))) {
+        return localStorage.getItem('lang');
+    }
+    return LANGS.find(d => d.default).short;
 }

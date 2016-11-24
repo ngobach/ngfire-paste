@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 
 import { Subscription } from 'rxjs/Subscription';
 
-import { Language, LANGS } from '../paste/languages';
+import * as Lang from '../paste/languages';
 import { PasteService } from '../paste/paste.service';
 
 @Component({
@@ -15,11 +15,11 @@ export class CreateComponent implements OnInit, OnDestroy {
   _userRef: Subscription;
 
   busy: boolean;
-  langs: Language[];
+  langs: Lang.Language[];
 
   content: string = '';
   name: string = '';
-  lang: string = LANGS.find(x => x.default).short;
+  lang: string = Lang.getDefault();
 
   loginState: any;
   constructor(private pasteService: PasteService, private router: Router, private af: AngularFire, title: Title) {
@@ -28,7 +28,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.busy = false;
-    this.langs = LANGS;
+    this.langs = Lang.LANGS;
     this._userRef = this.af.auth.subscribe(state => this.loginState = state);
   }
 
@@ -41,6 +41,9 @@ export class CreateComponent implements OnInit, OnDestroy {
       alert('Chưa đăng nhập!');
       return;
     }
+
+    // Change default languages
+    Lang.setDefault(this.lang);
 
     this.busy = true;
     this.pasteService.createPaste({

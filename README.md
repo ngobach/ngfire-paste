@@ -10,4 +10,4 @@ Live demo can be found here:
 ## Fix
 
 There're some bugs with **awesome-typescript-loader** that can't load *hightlight.js* and any library with **.js** suffix.   
-After run `npm install` you must rename **@types/hightlight.js** to  **@types/hightlightjs** and **hightlight.js** to **hightlightjs** in *node_modules*.   
+After run `npm install` you must rename **@types/hightlight.js** to  **@types/hightlightjs** and **hightlight.js** to **hightlightjs** in *node_modules*.

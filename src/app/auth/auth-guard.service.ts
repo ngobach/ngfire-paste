@@ -13,16 +13,20 @@ export class AuthGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         return new Promise(res => {
-            this.af.auth.subscribe(res);
+            const sub = this.af.auth.subscribe(data => {
+                res(data);
+                sub.unsubscribe();
+            });
         }).then(x => !!x).then(loggedIn => {
             if (!loggedIn) {
                 alert('Vui lòng đăng nhập');
                 this.af.auth.login();
-                this.af.auth.subscribe(res => {
+                const sub = this.af.auth.subscribe(res => {
                     if (res && this.redirectUrl) {
                         this.router.navigateByUrl(this.redirectUrl);
                         this.redirectUrl = null;
                     }
+                    sub.unsubscribe();
                 });
                 this.router.navigate(['/']);
                 this.redirectUrl = state.url;
