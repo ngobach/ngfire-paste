@@ -5,7 +5,8 @@
       ".write": false,
       "$pasteId": {
         ".read": true,
-        ".write": "auth != null && (newData.child('owner').val() === auth.uid || data.child('owner').val() === auth.uid)"
+        ".write": "auth != null",
+        ".validate": "(!data.exists() || data.child('owner').val() === auth.uid) && (!newData.exists() || newData.child('owner').val() === auth.uid)"
       }
     }
   }

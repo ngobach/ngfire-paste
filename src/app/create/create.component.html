@@ -1,6 +1,6 @@
 <div class="wrap">
   <div class="box form clearfix">
-    <h1>Tạo mới</h1>
+    <h1>{{editMode?'Sửa đổi':'Tạo mới'}}</h1>
     <form autocomplete="off">
       <div class="row">
         <label for="name">Tiêu đề</label><span class="help">Hãy cho mọi người biết đây là gì</span>
@@ -16,7 +16,7 @@
           <option *ngFor="let l of langs" [value]="l.short">{{l.title}}</option>
         </select>
       </div>
-      <div class="row"><button (click)="create()" [disabled]="busy || !isValid()">Tạo</button></div>
+      <div class="row"><button (click)="create()" [disabled]="busy || !isValid()">Okay</button></div>
     </form>
   </div>
   

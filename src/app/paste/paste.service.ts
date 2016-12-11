@@ -31,6 +31,11 @@ export class PasteService {
     return this.af.database.list('/pastes').push(paste).then(x => x.getKey()).catch(this.handleError);
   }
 
+  updatePaste(id: string, paste: Paste) {
+    paste.priority = -paste.createdAt;
+    return this.af.database.list('/pastes').update(id, paste);
+  }
+
   deletePaste(id: string): firebase.Promise<void> {
     return this.af.database.object('/pastes/' + id).remove();
   }

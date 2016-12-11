@@ -2068,8 +2068,21 @@ pre {
 }
 
 .actions .button {
-  margin-left: 2px !important;
+  border-radius: 0px;
+  border-left: solid 1px rgba(0,0,0,.08);
 }
+
+.actions .button:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-left: none;
+}
+
+.actions .button:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
 .actions .button.disabled {
   background: #34495e;
 }
@@ -2086,3 +2099,40 @@ div.boss {
 button.form-button {
   box-shadow: 0 3px 0 #333;
 }
+
+.form-button-group {
+  padding: 28px 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-button-group .form-button {
+  flex: 1;
+  border-radius: 0px;
+  margin: 0px !important;
+  border-left: solid 1px rgba(0,0,0,.2);
+}
+
+.form-button-primary {
+  background-color: #02AAEA;
+  box-shadow: 0 3px 0 #01739E !important;
+  color: #FFF;
+}
+
+.form-button-primary:hover {
+  background-color: #01739E;
+  box-shadow: 0 3px 0 #01597A !important;
+}
+
+.form-button-group .form-button:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-left: none;
+}
+
+.form-button-group .form-button:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+

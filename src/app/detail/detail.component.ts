@@ -82,4 +82,8 @@ export class DetailComponent implements OnInit, AfterViewInit, OnDestroy {
   delete() {
     return this.service.deletePaste(this.route.snapshot.params['id']).then(res => this.router.navigate(['/home']));
   }
+
+  edit() {
+    this.router.navigate(['/create', {id: this.route.snapshot.params['id']}]);
+  }
 }

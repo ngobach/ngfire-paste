@@ -9,8 +9,8 @@
     </div>
     <div class="actions">
         <a class="button back" href="javascript:0" routerLink="/home">Trở lại</a>
-        <a class="button button-copy" href="javascript:0" *ngIf="!copied" (click)="onCopy()">Copy</a>
-        <a class="button button-copy disabled" *ngIf="copied">Copied</a>
+        <a class="button button-copy" style="width: 48px" href="javascript:0" *ngIf="!copied" (click)="onCopy()">Copy</a>
+        <a class="button button-copy disabled" style="width: 48px" *ngIf="copied">Copied</a>
     </div>
   </div>
 </div>
@@ -20,8 +20,10 @@
     <div class="nano">
       <pre class="nano-content"><code [innerHtml]="content()"></code></pre>
     </div>
-
-    <button class="form-button center" *ngIf="isOwner" (click)="delete()"><span class="inline-icon back"></span>Xóa Paste này?</button>
+    <div class="form-button-group">
+      <button class="form-button" *ngIf="isOwner" (click)="delete()"><span class="inline-icon back"></span>Xóa Paste này?</button>
+      <button class="form-button form-button-primary" *ngIf="isOwner" (click)="edit()"><span class="inline-icon back"></span>Chỉnh sửa</button>
+    </div>
   </div>
 </div>
 <app-loader *ngIf="!paste"></app-loader>
